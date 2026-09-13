@@ -1,11 +1,13 @@
 :root {
   --accent: #e8552b;
+  --accent-dark: #d1481f;
   --dark: #1f2733;
   --text: #2c333d;
   --muted: #5b6472;
   --bg: #ffffff;
   --panel-bg: #f4f1ec;
   --border: #e3ddd2;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 * {
@@ -22,6 +24,7 @@ body {
 
 a {
   color: var(--accent);
+  transition: color 150ms ease;
 }
 
 /* Site nav (every page) */
@@ -105,6 +108,17 @@ a {
   font-weight: 600;
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
+  transition: transform 160ms var(--ease-out), background-color 150ms ease;
+}
+
+.button:active {
+  transform: scale(0.97);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .button:hover {
+    background: var(--accent-dark);
+  }
 }
 
 /* Card grid (curriculum ladder, grade lists, materials groups) */
@@ -121,6 +135,14 @@ a {
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 1.5rem;
+  transition: transform 200ms var(--ease-out), box-shadow 200ms var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(31, 39, 51, 0.1);
+  }
 }
 
 .card h3 {
@@ -150,6 +172,16 @@ a {
 .data-table th {
   background: var(--panel-bg);
   font-size: 0.95rem;
+}
+
+.data-table tbody tr {
+  transition: background-color 150ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .data-table tbody tr:hover {
+    background: var(--panel-bg);
+  }
 }
 
 /* Session pages (concept/foundations content, no step gallery) */
@@ -321,5 +353,12 @@ a {
 
   .banner h1 {
     font-size: 1.7rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button:active,
+  .card:hover {
+    transform: none;
   }
 }
