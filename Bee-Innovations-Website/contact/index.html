@@ -28,18 +28,19 @@
 <section class="page-hero">
   <div class="container">
     <span class="eyebrow">Contact</span>
-    <h1>Let's talk.</h1>
-    <p class="lead">Whether you're a school exploring a partnership or just want to know more, we'd like to hear from you.</p>
+    <h1>Let's talk about your school.</h1>
+    <p class="lead">Whether you're exploring a single robotics corner or a full makerspace, tell us a bit about your school and we'll get back to you.</p>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
-    <div class="card-grid" style="grid-template-columns: 1fr 1.2fr; align-items: start;">
+    <div class="contact-grid">
       <div class="callout">
-        <p><strong>Email</strong><br>hello@example.com</p>
-        <p><strong>Phone</strong><br>(placeholder)</p>
-        <p>Contact details are placeholders — replace with your real email, phone, and address.</p>
+        <p><strong>Email</strong><br><span class="tbd">To be added</span></p>
+        <p><strong>Phone</strong><br><span class="tbd">To be added</span></p>
+        <p><strong>Based in</strong><br>Hyderabad, Telangana</p>
+        <p><strong>Social</strong><br><span class="tbd">Instagram &middot; LinkedIn — handles coming soon</span></p>
       </div>
       <form class="form-grid" onsubmit="return false;">
         <div class="form-field">
@@ -47,16 +48,32 @@
           <input type="text" id="name" name="name" required>
         </div>
         <div class="form-field">
+          <label for="school">School Name</label>
+          <input type="text" id="school" name="school" required>
+        </div>
+        <div class="form-field">
+          <label for="city">City</label>
+          <input type="text" id="city" name="city" required>
+        </div>
+        <div class="form-field">
           <label for="email">Email</label>
           <input type="email" id="email" name="email" required>
         </div>
         <div class="form-field">
-          <label for="school">School / Organization</label>
-          <input type="text" id="school" name="school">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone">
         </div>
         <div class="form-field">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" required></textarea>
+          <label>Grade Levels You're Interested In</label>
+          <div class="checkbox-row">
+            <label><input type="checkbox" name="grades" value="1-3"> Grades 1–3</label>
+            <label><input type="checkbox" name="grades" value="4-6"> Grades 4–6</label>
+            <label><input type="checkbox" name="grades" value="7-9"> Grades 7–9</label>
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="message">Message <span class="tbd">(optional)</span></label>
+          <textarea id="message" name="message"></textarea>
         </div>
         <button type="submit" class="button button-solid">Send Message</button>
       </form>

@@ -341,6 +341,15 @@ p { margin: 0 0 1em; color: var(--text-muted); }
 
 .prose p { font-size: 1.02rem; }
 
+/* Contact layout */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
 /* Simple form */
 
 .form-grid {
@@ -425,10 +434,108 @@ p { margin: 0 0 1em; color: var(--text-muted); }
   text-align: center;
 }
 
+/* Mission / trust strips */
+
+.mission-strip {
+  text-align: center;
+  padding: 3.5rem 0;
+}
+
+.mission-strip p {
+  max-width: 760px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+.trust-strip {
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.trust-strip .eyebrow { margin-bottom: 0.75rem; }
+
+.trust-strip p.trust-note {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* Flow row (Explore -> Build -> Create) */
+
+.flow-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.flow-row .flow-step { color: var(--accent); }
+
+.flow-row .flow-arrow { color: var(--text-muted); font-weight: 400; }
+
+/* Check list */
+
+ul.check-list {
+  list-style: none;
+  margin: 0 0 1.5rem;
+  padding: 0;
+}
+
+ul.check-list li {
+  position: relative;
+  padding-left: 1.7em;
+  margin-bottom: 0.6em;
+  color: var(--text-muted);
+}
+
+ul.check-list li::before {
+  content: '\2713';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* Checkbox row (contact form) */
+
+.checkbox-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  padding-top: 0.2em;
+}
+
+.checkbox-row label {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.92rem;
+  color: var(--text);
+}
+
+.checkbox-row input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--accent);
+}
+
+.tbd {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
 /* Responsive */
 
 @media (max-width: 860px) {
   .footer-grid { grid-template-columns: 1fr 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
